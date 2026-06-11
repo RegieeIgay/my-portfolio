@@ -1,4 +1,5 @@
 import { skillCategories } from "../data/portfolio";
+import SkillIcon from "./SkillIcon";
 
 const accentColors = [
   "border-cyan-500/30 bg-cyan-500/5 text-cyan-300",
@@ -34,8 +35,9 @@ export default function Skills() {
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className={`rounded-lg border px-3 py-1.5 font-mono text-xs ${accentColors[index % accentColors.length]}`}
+                    className={`inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 font-mono text-xs ${accentColors[index % accentColors.length]}`}
                   >
+                    <SkillIcon skill={skill} />
                     {skill}
                   </span>
                 ))}
