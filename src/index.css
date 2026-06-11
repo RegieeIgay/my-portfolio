@@ -5,17 +5,37 @@
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
+@utility section-x {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+@utility section-y {
+  @apply py-16 sm:py-20 lg:py-24;
+}
+
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  overflow-x: hidden;
 }
 
 body {
   font-family: var(--font-sans);
   background-color: #020617;
   color: #e2e8f0;
+  overflow-x: hidden;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
   background-color: rgb(34 211 238 / 0.3);
   color: #f8fafc;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

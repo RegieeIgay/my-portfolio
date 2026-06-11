@@ -2,15 +2,15 @@ import { profile } from "../data/portfolio";
 
 export default function About() {
   return (
-    <section id="about" className="px-6 py-24">
-      <div className="mx-auto max-w-6xl">
+    <section id="about" className="section-x section-y scroll-mt-24">
+      <div className="mx-auto max-w-6xl min-w-0">
         <SectionHeading
           eyebrow="About Me"
           title="Building systems that enterprises rely on"
         />
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
-          <div className="space-y-6 text-base leading-relaxed text-slate-400">
+        <div className="mt-8 grid gap-8 sm:mt-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-start lg:gap-10">
+          <div className="min-w-0 space-y-5 text-sm leading-relaxed text-slate-400 sm:space-y-6 sm:text-base">
             <p>{profile.summary}</p>
             <p>
               From payroll networks handling statutory deductions to inventory
@@ -20,7 +20,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
+          <div className="min-w-0 rounded-2xl border border-slate-800 bg-slate-900/50 p-5 sm:p-6">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
               Core Focus
             </h3>
@@ -36,7 +36,7 @@ export default function About() {
                   className="flex items-start gap-3 text-sm text-slate-300"
                 >
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-400" />
-                  {item}
+                  <span className="min-w-0">{item}</span>
                 </li>
               ))}
             </ul>
@@ -55,9 +55,9 @@ function SectionHeading({
   title: string;
 }) {
   return (
-    <div>
+    <div className="min-w-0">
       <p className="font-mono text-sm text-cyan-400">{eyebrow}</p>
-      <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+      <h2 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
         {title}
       </h2>
     </div>

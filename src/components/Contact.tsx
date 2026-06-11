@@ -2,38 +2,42 @@ import { profile } from "../data/portfolio";
 
 export default function Contact() {
   return (
-    <section id="contact" className="px-6 py-24">
-      <div className="mx-auto max-w-6xl">
-        <div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-8 sm:p-12">
+    <section id="contact" className="section-x section-y scroll-mt-24">
+      <div className="mx-auto max-w-6xl min-w-0">
+        <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-5 sm:rounded-3xl sm:p-8 lg:p-12">
           <div
             aria-hidden
-            className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl"
+            className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-cyan-500/10 blur-3xl sm:h-64 sm:w-64"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-indigo-500/10 blur-3xl"
+            className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-indigo-500/10 blur-3xl sm:h-64 sm:w-64"
           />
 
-          <div className="relative max-w-2xl">
+          <div className="relative min-w-0 max-w-2xl">
             <p className="font-mono text-sm text-cyan-400">Contact</p>
-            <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            <h2 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
               Let&apos;s build something that performs
             </h2>
-            <p className="mt-4 text-slate-400">
+            <p className="mt-4 text-sm leading-relaxed text-slate-400 sm:text-base">
               Interested in collaborating on enterprise software, full-stack
               systems, or workflow automation? Reach out — I&apos;d love to
               connect.
             </p>
 
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <div className="mt-6 flex flex-col gap-4 sm:mt-8 sm:flex-row sm:items-center">
               <a
                 href={`mailto:${profile.email}`}
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400"
+                className="inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-xl bg-cyan-500 px-5 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400 sm:w-auto sm:px-6"
               >
                 <MailIcon />
-                {profile.email}
+                <span className="min-w-0 break-all text-center sm:break-normal">
+                  {profile.email}
+                </span>
               </a>
-              <p className="text-sm text-slate-500">{profile.location}</p>
+              <p className="text-center text-sm text-slate-500 sm:text-left">
+                {profile.location}
+              </p>
             </div>
           </div>
         </div>
@@ -45,7 +49,7 @@ export default function Contact() {
 function MailIcon() {
   return (
     <svg
-      className="h-4 w-4"
+      className="h-4 w-4 shrink-0"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
