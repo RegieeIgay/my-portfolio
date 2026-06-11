@@ -13,11 +13,18 @@ const categoryMeta = {
     description:
       "Enterprise integrations and low-code solutions from hands-on platform training.",
   },
+  personal: {
+    label: "Personal Projects",
+    accent: "text-emerald-400 border-emerald-500/30 bg-emerald-500/10",
+    description:
+      "Live web apps built and deployed — click any project to open the demo.",
+  },
 } as const;
 
 export default function Projects() {
   const professional = projects.filter((p) => p.category === "professional");
   const training = projects.filter((p) => p.category === "training");
+  const personal = projects.filter((p) => p.category === "personal");
 
   return (
     <section id="projects" className="px-6 py-24">
@@ -38,6 +45,10 @@ export default function Projects() {
         <ProjectGroup
           category="training"
           items={training}
+        />
+        <ProjectGroup
+          category="personal"
+          items={personal}
         />
       </div>
     </section>
@@ -76,10 +87,10 @@ function ProjectGroup({
 }
 
 function ProjectCard({ project }: { project: Project }) {
-  return (
-    <article className="group flex h-full flex-col rounded-2xl border border-slate-800 bg-slate-900/50 p-6 transition hover:border-slate-700 hover:bg-slate-900/80">
+  const cardContent = (
+    <>
       <div className="flex items-start justify-between gap-4">
-        <h3 className="text-xl font-semibold text-white group-hover:text-cyan-300 transition-colors">
+        <h3 className="text-xl font-semibold text-white transition-colors group-hover:text-cyan-300">
           {project.title}
         </h3>
         {project.impact && (
@@ -107,7 +118,51 @@ function ProjectCard({ project }: { project: Project }) {
             </span>
           ))}
         </div>
+
+        {project.url && (
+          <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-cyan-400 transition group-hover:text-cyan-300">
+            View live demo
+            <ExternalLinkIcon />
+          </span>
+        )}
       </div>
+    </>
+  );
+
+  if (project.url) {
+    return (
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex h-full flex-col rounded-2xl border border-slate-800 bg-slate-900/50 p-6 transition hover:border-cyan-500/40 hover:bg-slate-900/80"
+      >
+        {cardContent}
+      </a>
+    );
+  }
+
+  return (
+    <article className="group flex h-full flex-col rounded-2xl border border-slate-800 bg-slate-900/50 p-6 transition hover:border-slate-700 hover:bg-slate-900/80">
+      {cardContent}
     </article>
+  );
+}
+
+function ExternalLinkIcon() {
+  return (
+    <svg
+      className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+      />
+    </svg>
   );
 }

@@ -7,8 +7,9 @@ export type Project = {
   title: string;
   description: string;
   techStack: string[];
-  category: "professional" | "training";
+  category: "professional" | "training" | "personal";
   impact?: string;
+  url?: string;
 };
 
 export const navLinks = [
@@ -23,7 +24,7 @@ export const profile = {
   name: "Regie Igay",
   role: "Software Engineer",
   location: "Pontevedra, Negros Occidental, Philippines",
-  email: "regie.igay@email.com",
+  email: "regieeigay@gmail.com",
   tagline:
     "I build enterprise systems that move faster, scale cleaner, and deliver measurable business impact.",
   summary:
@@ -104,5 +105,29 @@ export const projects: Project[] = [
     ],
     category: "training",
     impact: "Rapid enterprise workflow delivery",
+  },
+  {
+    title: "Campus Connect",
+    description:
+      "A school attendance and academic management portal with secure sign-in for educators. Streamlines daily attendance tracking through a clean, modern web interface.",
+    techStack: ["React.js", "Tailwind CSS", "TypeScript"],
+    category: "personal",
+    url: "https://campus-connect-79.lovable.app",
+  },
+  {
+    title: "Finance Flow",
+    description:
+      "A personal finance app for tracking expenses and managing loans. Helps users monitor spending and stay on top of financial obligations in one dashboard.",
+    techStack: ["React.js", "Tailwind CSS", "TypeScript"],
+    category: "personal",
+    url: "https://finance-flow-60.lovable.app",
+  },
+  {
+    title: "Phil Payroll Pal",
+    description:
+      "A Philippine-focused payroll management system with secure authentication. Built to simplify employee compensation tracking and payroll workflows.",
+    techStack: ["React.js", "Tailwind CSS", "TypeScript"],
+    category: "personal",
+    url: "https://phil-payroll-pal.lovable.app",
   },
 ];
