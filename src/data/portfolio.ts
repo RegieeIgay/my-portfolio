@@ -16,6 +16,8 @@ export const navLinks = [
   { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
+  { label: "Timeline", href: "#timeline" },
+  { label: "Architecture", href: "#architecture" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ] as const;
@@ -42,8 +44,8 @@ export const skillCategories: SkillCategory[] = [
     skills: ["ASP.NET Core Web API", "React.js", "Tailwind CSS"],
   },
   {
-    title: "Databases & Platforms",
-    skills: ["SQL Server", "MySQL", "Supabase"],
+    title: "Databases & Cloud Platforms",
+    skills: ["SQL Server", "MySQL", "Supabase", "Microsoft Azure"],
   },
   {
     title: "Reporting & Enterprise",
@@ -53,13 +55,56 @@ export const skillCategories: SkillCategory[] = [
 
 export const projects: Project[] = [
   {
+    title: "KAIROS GL — Pharmacy Financial & GL ERP",
+    description:
+      "Full-stack Enterprise Financial Management and General Ledger (GL) ERP Web Application tailored for pharmacy operations. Engineered modules for multi-entity general ledger, chart of accounts, real-time journal entries, and automated financial reporting hosted on Microsoft Azure cloud infrastructure.",
+    techStack: [
+      "TypeScript",
+      "React",
+      "ASP.NET Core Web API",
+      "SQL Server",
+      "Microsoft Azure",
+    ],
+    category: "professional",
+    impact: "Pharmacy Financial & GL ERP",
+  },
+  {
+    title: "DMCGL — Hardware & Sari-Sari Store GL ERP",
+    description:
+      "Full-stack Enterprise Financial Management and General Ledger (GL) ERP Web Application built for hardware stores and sari-sari store retail operations. Integrated general ledger accounting with stock inventory management, POS sales tracking, and financial analytics hosted on Microsoft Azure.",
+    techStack: [
+      "TypeScript",
+      "React",
+      "ASP.NET Core Web API",
+      "SQL Server",
+      "Microsoft Azure",
+    ],
+    category: "professional",
+    impact: "Retail & Hardware GL ERP",
+  },
+  {
+    title: "VMA Enterprise Payroll System",
+    description:
+      "High-performance enterprise payroll system built with C# Windows Forms desktop application, ASP.NET Core Web API backend, and cloud-hosted SQL Server database on Microsoft Azure. Handles complex employee compensation, statutory deduction calculations, and automated payroll processing.",
+    techStack: [
+      "C#",
+      "Windows Forms",
+      "ASP.NET Core Web API",
+      "SQL Server",
+      "Microsoft Azure",
+    ],
+    category: "professional",
+    impact: "Cloud-Hosted Enterprise Payroll",
+  },
+  {
     title: "Hacienda & Academic Payroll Systems",
     description:
-      "Engineered high-volume desktop and web payroll architectures using C#.NET, ASP.NET Core Web API, and online SQL Server databases. Features automated deduction handling (SSS, PhilHealth, Pag-IBIG) and Crystal Reports integration that accelerated processing workflows by 50% to 2x.",
+      "Engineered high-volume desktop and web payroll architectures using C#.NET, ASP.NET Core Web API, and cloud-hosted SQL Server databases on Microsoft Azure. Features automated deduction handling (SSS, PhilHealth, Pag-IBIG) and Crystal Reports integration that accelerated processing workflows by 50% to 2x.",
     techStack: [
       "C#",
       "ASP.NET Core Web API",
       "SQL Server",
+      "Microsoft Azure",
       "Crystal Reports",
       ".NET Desktop",
     ],
@@ -69,12 +114,13 @@ export const projects: Project[] = [
   {
     title: "Enterprise Rental Management Platform",
     description:
-      "Built a web-based rental tracking application with dynamic contract lifecycle tracking for lessees and automated annual property escalation rate models.",
+      "Built a web-based rental tracking application hosted on Microsoft Azure with dynamic contract lifecycle tracking for lessees and automated annual property escalation rate models.",
     techStack: [
       "C#",
       "ASP.NET Core Web API",
       "React.js",
       "SQL Server",
+      "Microsoft Azure",
     ],
     category: "professional",
     impact: "End-to-end lease lifecycle automation",
@@ -82,12 +128,13 @@ export const projects: Project[] = [
   {
     title: "Full-Stack Inventory & Accounting System",
     description:
-      "Designed a high-performance inventory system leveraging TypeScript, React, ASP.NET Core Web API, and SQL Server with embedded stock tracking and sales-to-representative accounting modules.",
+      "Designed a high-performance inventory system leveraging TypeScript, React, ASP.NET Core Web API, and Azure-hosted SQL Server with embedded stock tracking and sales-to-representative accounting modules.",
     techStack: [
       "TypeScript",
       "React",
       "ASP.NET Core Web API",
       "SQL Server",
+      "Microsoft Azure",
     ],
     category: "professional",
     impact: "Unified inventory + sales accounting",

@@ -1,16 +1,42 @@
+import { motion } from "framer-motion";
 import { profile } from "../data/portfolio";
 
 export default function Contact() {
   return (
     <section id="contact" className="section-x section-y scroll-mt-24">
       <div className="mx-auto max-w-6xl min-w-0">
-        <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-5 sm:rounded-3xl sm:p-8 lg:p-12">
-          <div
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6 }}
+          className="relative overflow-hidden rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 p-5 sm:rounded-3xl sm:p-8 lg:p-12"
+        >
+          <motion.div
             aria-hidden
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.1, 0.25, 0.1],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
             className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-cyan-500/10 blur-3xl sm:h-64 sm:w-64"
           />
-          <div
+          <motion.div
             aria-hidden
+            animate={{
+              scale: [1, 1.25, 1],
+              opacity: [0.1, 0.2, 0.1],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
             className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-indigo-500/10 blur-3xl sm:h-64 sm:w-64"
           />
 
@@ -26,21 +52,23 @@ export default function Contact() {
             </p>
 
             <div className="mt-6 flex flex-col gap-4 sm:mt-8 sm:flex-row sm:items-center">
-              <a
+              <motion.a
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
                 href={`mailto:${profile.email}`}
-                className="inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-xl bg-cyan-500 px-5 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400 sm:w-auto sm:px-6"
+                className="inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-xl bg-cyan-500 px-5 py-3.5 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-400 sm:w-auto sm:px-6"
               >
                 <MailIcon />
                 <span className="min-w-0 break-all text-center sm:break-normal">
                   {profile.email}
                 </span>
-              </a>
+              </motion.a>
               <p className="text-center text-sm text-slate-500 sm:text-left">
                 {profile.location}
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

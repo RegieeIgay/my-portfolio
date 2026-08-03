@@ -1,6 +1,7 @@
 import type { IconType } from "react-icons";
 import { DiMsqlServer } from "react-icons/di";
-import { FaShareNodes } from "react-icons/fa6";
+import { FaShareNodes, FaWindows } from "react-icons/fa6";
+import { VscAzure } from "react-icons/vsc";
 import {
   SiCrystal,
   SiDotnet,
@@ -23,14 +24,21 @@ const skillIconMap: Record<string, IconType> = {
   SQL: TbDatabase,
   "ASP.NET Core Web API": SiDotnet,
   "React.js": SiReact,
+  React: SiReact,
   "Tailwind CSS": SiTailwindcss,
   "SQL Server": DiMsqlServer,
   MySQL: SiMysql,
   Supabase: SiSupabase,
   "Crystal Reports": SiCrystal,
   "Power Platform": TbApps,
+  "Power Apps": TbApps,
+  "Power Pages": TbApps,
+  Dataverse: TbDatabase,
   SharePoint: FaShareNodes,
   "Dynamics 365": TbUsers,
+  ".NET Desktop": SiDotnet,
+  "Windows Forms": FaWindows,
+  "Microsoft Azure": VscAzure,
 };
 
 type SkillIconProps = {

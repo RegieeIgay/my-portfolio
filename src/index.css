@@ -5,6 +5,86 @@
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
+:root, [data-theme="cyan"] {
+  --accent-400: 34 211 238;   /* cyan-400 */
+  --accent-500: 6 182 212;   /* cyan-500 */
+  --accent-300: 103 232 249;  /* cyan-300 */
+}
+
+[data-theme="emerald"] {
+  --accent-400: 52 211 153;   /* emerald-400 */
+  --accent-500: 16 185 129;   /* emerald-500 */
+  --accent-300: 110 231 183;  /* emerald-300 */
+}
+
+[data-theme="violet"] {
+  --accent-400: 167 139 250;  /* violet-400 */
+  --accent-500: 139 92 246;   /* violet-500 */
+  --accent-300: 196 181 253;  /* violet-300 */
+}
+
+[data-theme="amber"] {
+  --accent-400: 251 191 36;   /* amber-400 */
+  --accent-500: 245 158 11;   /* amber-500 */
+  --accent-300: 252 211 77;   /* amber-300 */
+}
+
+[data-theme="rose"] {
+  --accent-400: 251 113 133;  /* rose-400 */
+  --accent-500: 244 63 94;    /* rose-500 */
+  --accent-300: 253 164 175;  /* rose-300 */
+}
+
+[data-theme="blue"] {
+  --accent-400: 96 165 250;   /* blue-400 */
+  --accent-500: 59 130 246;   /* blue-500 */
+  --accent-300: 147 197 253;  /* blue-300 */
+}
+
+.text-cyan-400 {
+  color: rgb(var(--accent-400)) !important;
+}
+
+.text-cyan-300, .hover\:text-cyan-300:hover {
+  color: rgb(var(--accent-300)) !important;
+}
+
+.bg-cyan-500 {
+  background-color: rgb(var(--accent-500)) !important;
+}
+
+.hover\:bg-cyan-400:hover {
+  background-color: rgb(var(--accent-400)) !important;
+}
+
+.bg-cyan-500\/5 {
+  background-color: rgb(var(--accent-500) / 0.05) !important;
+}
+
+.bg-cyan-500\/10 {
+  background-color: rgb(var(--accent-500) / 0.1) !important;
+}
+
+.bg-cyan-500\/20 {
+  background-color: rgb(var(--accent-500) / 0.2) !important;
+}
+
+.border-cyan-500\/30 {
+  border-color: rgb(var(--accent-500) / 0.3) !important;
+}
+
+.hover\:border-cyan-500\/40:hover {
+  border-color: rgb(var(--accent-500) / 0.4) !important;
+}
+
+.ring-cyan-500\/30 {
+  --tw-ring-color: rgb(var(--accent-500) / 0.3) !important;
+}
+
+.shadow-cyan-500\/20 {
+  --tw-shadow-color: rgb(var(--accent-500) / 0.2) !important;
+}
+
 @utility section-x {
   @apply px-4 sm:px-6 lg:px-8;
 }
@@ -30,7 +110,7 @@ body {
 }
 
 ::selection {
-  background-color: rgb(34 211 238 / 0.3);
+  background-color: rgb(var(--accent-400) / 0.3);
   color: #f8fafc;
 }
 
@@ -38,4 +118,55 @@ body {
   html {
     scroll-behavior: auto;
   }
+}
+
+/* Light Mode Overrides */
+[data-mode="light"] body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+[data-mode="light"] .bg-slate-950,
+[data-mode="light"] .bg-slate-900,
+[data-mode="light"] .bg-slate-900\/40,
+[data-mode="light"] .bg-slate-900\/50,
+[data-mode="light"] .bg-slate-900\/60,
+[data-mode="light"] .bg-slate-900\/80,
+[data-mode="light"] .bg-slate-900\/90,
+[data-mode="light"] .bg-slate-900\/95,
+[data-mode="light"] .bg-slate-950\/40,
+[data-mode="light"] .bg-slate-950\/60,
+[data-mode="light"] .bg-slate-950\/80,
+[data-mode="light"] .bg-slate-950\/90,
+[data-mode="light"] .bg-slate-950\/95 {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+[data-mode="light"] .text-white {
+  color: #0f172a !important;
+}
+
+[data-mode="light"] .text-slate-200,
+[data-mode="light"] .text-slate-300 {
+  color: #1e293b !important;
+}
+
+[data-mode="light"] .text-slate-400 {
+  color: #475569 !important;
+}
+
+[data-mode="light"] .text-slate-500 {
+  color: #64748b !important;
+}
+
+[data-mode="light"] .border-slate-800,
+[data-mode="light"] .border-slate-800\/80,
+[data-mode="light"] .border-slate-800\/60,
+[data-mode="light"] .border-slate-700 {
+  border-color: #e2e8f0 !important;
+}
+
+[data-mode="light"] .bg-slate-950\/80 {
+  background-color: rgba(248, 250, 252, 0.85) !important;
 }
