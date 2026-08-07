@@ -103,24 +103,22 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 </div>
               </div>
 
-              {/* System Architecture Highlights */}
+              {/* System Architecture / Key Features Highlights */}
               <div className="rounded-xl border border-slate-800 bg-slate-950/60 p-4 sm:p-5">
                 <h3 className="flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-wider text-cyan-400">
-                  <TbCloudCheck className="h-4 w-4" /> Key Enterprise Capabilities
+                  <TbCloudCheck className="h-4 w-4" /> {project.category === "professional" ? "Key Enterprise Capabilities" : "Key Project Features"}
                 </h3>
                 <ul className="mt-3 space-y-2 text-xs text-slate-300 sm:text-sm">
-                  <li className="flex items-start gap-2">
-                    <TbCheck className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <span>Hosted on Microsoft Azure cloud infrastructure with scalable SQL Server backends.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <TbCheck className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <span>Optimized transactional queries and REST API controllers for sub-second data responses.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <TbCheck className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <span>Designed with modular component architectures and strict type definitions.</span>
-                  </li>
+                  {(project.features || [
+                    "Hosted on Microsoft Azure cloud infrastructure with scalable SQL Server backends.",
+                    "Optimized transactional queries and REST API controllers for sub-second data responses.",
+                    "Designed with modular component architectures and strict type definitions."
+                  ]).map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <TbCheck className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

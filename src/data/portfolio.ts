@@ -10,6 +10,7 @@ export type Project = {
   category: "professional" | "training" | "personal";
   impact?: string;
   url?: string;
+  features?: string[];
 };
 
 export const navLinks = [
@@ -152,6 +153,22 @@ export const projects: Project[] = [
     ],
     category: "training",
     impact: "Rapid enterprise workflow delivery",
+  },
+  {
+    title: "RegieDev Resume Builder",
+    description:
+      "A privacy-first, client-side Resume Builder that fits resume content onto a single page and exports ATS-friendly vector PDFs. Features automated PDF/DOCX parsing to import existing resume history, multi-theme layouts (Modern Minimalist, Elegant, Tech) with customizable accent colors, and local-storage data persistence.",
+    techStack: ["React.js", "Tailwind CSS", "TypeScript"],
+    category: "personal",
+    url: "https://resume-builder-tau-vert.vercel.app",
+    features: [
+      "🔒 100% Privacy-First & Zero-Database: Your resume data never leaves your browser. It is saved directly to your local storage, keeping your personal information completely private.",
+      "📄 Smart One-Page Engine: No more awkward trailing lines on a second page! The preview and printing layouts automatically adjust to keep your resume perfectly formatted on a single page.",
+      "📥 Smart PDF/DOCX Import: Upload your PDF or Word document, and the parser will instantly map your sections, filter out blank bullets, and organize your history.",
+      "🎨 Premium Themes & Accent Customization: Instantly switch between modern layouts (Modern Minimalist, Elegant, Tech) and toggle dark/light mode with customizable accent colors.",
+      "📊 ATS-Optimized Export: Exports to clean vector PDF format so your text is completely selectable and readable by Applicant Tracking Systems (ATS).",
+      "💬 Direct Feedback System: Integrated direct email feedback mechanism allowing users to suggest features or report bugs directly to developer inbox (regieigay@gmail.com)."
+    ],
   },
   {
     title: "Campus Connect",
